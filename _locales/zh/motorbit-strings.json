@@ -34,5 +34,5 @@
     "IrRemote|block": "红外",
     "IrRemote.init|block": "红外遥控器初始化引脚|%pin",
     "IrRemote.onPressEvent|block": "当红外遥控器按键|%btn|按下",
-	"motorbit.sensor_tracking|block": "引脚 %pin 检测到黑线？",
+	"motorbit.sensor_tracking|block": "引脚 %pin 检测到黑线？"
 }
