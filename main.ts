@@ -610,9 +610,9 @@ function RgbDisplay(indexstart: number, indexend: number, rgb: RgbColors): void 
     export function sensor_tracking(pin: DigitalPin): boolean {
 	  pins.digitalWritePin(pin, 0)
 	     if (pins.digitalReadPin(pin) == 1) {
-		    return false;
-		}else {
 		    return true;
+		}else {
+		    return false;
 		}
 	}
 
