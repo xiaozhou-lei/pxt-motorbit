@@ -478,7 +478,7 @@ export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, spe
 //% inlineInputMode=inline
 //% speed1.min=-255 speed1.max=255
 //% speed2.min=-255 speed2.max=255
-//% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+//% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
 export function MotorRunDualDelay(motor1: Motors, speed1: number, motor2: Motors, speed2: number, delay: number): void {
     MotorRun(motor1, speed1);
     MotorRun(motor2, speed2);
