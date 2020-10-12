@@ -632,10 +632,44 @@ function RgbDisplay(indexstart: number, indexend: number, rgb: RgbColors): void 
     export function sensor_tracking(pin: DigitalPin): boolean {
 	  pins.digitalWritePin(pin, 0)
 	     if (pins.digitalReadPin(pin) == 1) {
-		    return true;
-		}else {
 		    return false;
+		}else {
+		    return true;
 		}
 	}
-
+	
+	/**
+     * 四路循迹传感器初始化
+     */
+    //% blockId=four_sensor_tracking block="four_sensor_tracking pin1 |digitalpin %pin1 pin2 |digitalpin %pin2 |pin3 |digitalpin %pin3 |pin4 |digitalpin %pin4"
+    //% inlineInputMode=inline
+	export function four_sensor_tracking(pin1: DigitalPin, pin2: DigitalPin, pin3: DigitalPin, pin4: DigitalPin): number {
+	  let result = 0;
+	  pin1.digitalWritePin(pin1, 0)
+	  pin2.digitalWritePin(pin2, 0)
+	  pin3.digitalWritePin(pin3, 0)
+	  pin4.digitalWritePin(pin4, 0)
+	  if (pin1.digitalReadPin(pin1) == 1) {
+		result = 1 | result;
+	  }else {
+		result = 0 | result;
+	  }
+	  if (pin2.digitalReadPin(pin2) == 1) {
+		result = 2 | result;
+	  }else {
+		result = 0 | result;
+	  }
+	  if (pin3.digitalReadPin(pin3) == 1) {
+		result = 4 | result;
+	  }else {
+		result = 0 | result;
+	  }
+	   if (pin4.digitalReadPin(pin4) == 1) {
+		result = 8 | result;
+	  }else {
+		result = 0 | result;
+	  }
+	  return result;
+	}
+	
 }
