@@ -645,26 +645,26 @@ function RgbDisplay(indexstart: number, indexend: number, rgb: RgbColors): void 
     //% inlineInputMode=inline
 	export function four_sensor_tracking(pin1: DigitalPin, pin2: DigitalPin, pin3: DigitalPin, pin4: DigitalPin): number {
 	  let result = 0;
-	  pin1.digitalWritePin(pin1, 0)
-	  pin2.digitalWritePin(pin2, 0)
-	  pin3.digitalWritePin(pin3, 0)
-	  pin4.digitalWritePin(pin4, 0)
-	  if (pin1.digitalReadPin(pin1) == 1) {
+	  pins.digitalWritePin(pin1, 0)
+	  pins.digitalWritePin(pin2, 0)
+	  pins.digitalWritePin(pin3, 0)
+	  pins.digitalWritePin(pin4, 0)
+	  if (pins.digitalReadPin(pin1) == 1) {
 		result = 1 | result;
 	  }else {
 		result = 0 | result;
 	  }
-	  if (pin2.digitalReadPin(pin2) == 1) {
+	  if (pins.digitalReadPin(pin2) == 1) {
 		result = 2 | result;
 	  }else {
 		result = 0 | result;
 	  }
-	  if (pin3.digitalReadPin(pin3) == 1) {
+	  if (pins.digitalReadPin(pin3) == 1) {
 		result = 4 | result;
 	  }else {
 		result = 0 | result;
 	  }
-	   if (pin4.digitalReadPin(pin4) == 1) {
+	   if (pins.digitalReadPin(pin4) == 1) {
 		result = 8 | result;
 	  }else {
 		result = 0 | result;
